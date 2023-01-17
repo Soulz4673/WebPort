@@ -1,24 +1,80 @@
 <!DOCTYPE html>
-<html>
+<html lang = "en">
 <head>
-    <title>Brian Nguyen</title>
-
+    <meta charset="UTF-8">
     <meta name = "viewport" content = "width=device-width,
     initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+    <title>Brian Nguyen</title>
 
-	<link href="https://fonts.googleapis.com/css2?family=Russo+One&display=swap" rel="stylesheet">
+    <link rel = "stylesheet" href = "default.css">
 
-	<link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@500&family=Russo+One&display=swap" rel="stylesheet">
-
-	<link rel="stylesheet" type="text/css" href="default.css">
-	<link id="theme-style" rel="stylesheet" type="text/css" href="">
 
 </head>
 <body>
-    <div>
+    <div id ="Page" class = "is_dark">
+        <div id = "Background">
+            <canvas data-engine="three.js r148" width="1169" height="1195" style="width: 1169.34px; height: 1195.34px;"></canvas>
+        </div>
+        <div class ="mask" id = "Mask">
+            <div class = "mask_top"></div>
+            <div class = "mask_bottom"></div>
+        </div>
+        <div class="frame" id="Frame">
+            <div class="frame_line frame_line-left"></div>
+            <div class="frame_line frame_line-right"></div>
+            <div class="frame_line frame_line-top"></div>
+            <div class="frame_line frame_line-bottom"></div>
+        </div>
+        <div class="theme" id="Theme" x-data="" @click="$store.ui.toggleTheme()">
+            <div class="theme_color" :class="{ 'is-selected': $store.ui.theme === 'light' }">
+                <div class="_box"></div>
+                <!--::before-->
+                <div class="_text">Light</div>
+            </div>
+            <div class="theme_color is-selected" :class="{ 'is-selected': $store.ui.theme === 'dark' }">
+                <div class="_box"></div>
+                <!--::before-->
+                <div class="_text">Dark</div>
+            </div>
+        </div>
+        <header class = "siteHeader" id = "SiteHeader">
+            <h1 class = "siteHeader_title">Brian Nguyen</h1>
+            <p class ="siteHeader_label"> Software Engineer</p>
+            <nav class ="siteHeader_nav" x-data>
+                <o1>
+                    <li :class = "{'is-selected': $store.ui.currentPath ==='/'}" class="is-selected">
+                        <div class="_star">*</div>
+                        <a class="_text" href="h">
+                            <!--::before-->
+                            "Home"
+                        </a>
+                    </li>
+                    <li :class = "{'is-selected': $store.ui.currentPath === '/projects/'}" class>
+                        <div class = "_star">*</div>
+                        <a class="_text" href="/projects/">
+                            <!--::before-->
+                            "Projects"
+                        </a>
+                    </li>
+                    <li :class = "{'is-selected': $store.ui.currentPath === '/info/'}" class>
+                        <div class = "_star">*</div>
+                        <a class = "_text" href = "/info">
+                            <!--::before-->
+                            "Info"
+                        </a>
+                    </li>
+                    <li : class = "{'is-selected': $store.ui.currentPath === '/contact/'}" class>
+                        <div class = "_star">*</div>
+                        <a class = "_text" href = "/contact">
+                            <!--::before-->
+                            "Contact"
+                        </a>
 
+                    </li>
+                </o1>
+            </nav>
+        </header>
     </div>
-
     <script src = "script.js"></script>
 </body>
 </html>

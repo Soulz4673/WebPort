@@ -1,5 +1,9 @@
 console.log('Its working')
 
+const switchElement = document.querySelector('.')
+
+switchEle
+
 let theme = localStorage.getItem('theme')
 
 if(theme == null){
